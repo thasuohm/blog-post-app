@@ -14,6 +14,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  likeBlog: [String],
   registerAt: {
     type: Date,
     default: Date.now,

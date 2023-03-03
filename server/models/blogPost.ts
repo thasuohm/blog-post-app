@@ -10,10 +10,15 @@ const blogPostSchema = new mongoose.Schema({
     ref: 'User',
     required: true,
   },
+  coverImage: String,
   content: {
     type: [
       {
-        type: { type: String, enum: ['text', 'image'], required: true },
+        type: {
+          type: String,
+          enum: ['text', 'image', 'header'],
+          required: true,
+        },
         text: { type: String },
         image: { type: String },
       },

@@ -2,6 +2,7 @@ import express from 'express'
 import dotenv from 'dotenv'
 import authRoute from './routes/authentication'
 import userRoute from './routes/user'
+import blogPostRoute from './routes/blogPost'
 import mongoose from 'mongoose'
 import cookieParser from 'cookie-parser'
 import passport from 'passport'
@@ -19,7 +20,7 @@ mongoose
 const app = express()
 
 app.get('/', (req, res) => {
-  res.send('Hello, I am Base!')
+  res.send('Hello, I am Base Route!')
 })
 
 app.use(cookieParser())
@@ -31,6 +32,7 @@ app.use(
   passport.authenticate('jwt', { session: false }),
   userRoute
 )
+app.use('/api/blogPost', blogPostRoute)
 
 app.listen(port, () => {
   console.log(`Server started on port ${port}`)

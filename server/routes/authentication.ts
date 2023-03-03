@@ -4,8 +4,6 @@ import { validateString } from '../utils/helperFunction/string'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 import dotenv from 'dotenv'
-import { AuthTokenType } from '../types/token'
-import jwtDecode from 'jwt-decode'
 
 dotenv.config({ path: `.env.${process.env.NODE_ENV}` })
 const nodeEnv = process.env.NODE_ENV
